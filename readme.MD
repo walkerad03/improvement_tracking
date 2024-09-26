@@ -21,3 +21,24 @@ The script will output the full data for all flagged swims to `flagged_swims.csv
 6. Calculate the percent improvement from each time off best value.
 7. Scale improvement rate by the time since the last swim. This is to account for swimmers who go multiple months or years without competing.
 8. Compute adjusted z-scores for each scaled percent improvement value. Any value above 3.5 is marked as a flagged time.
+
+## Example
+Below is an example of the script running on my own 100 Yard Backstroke times. Even though times are not actually fraudulent, the script still flags a few times.
+```text
+ python main.py --file data/davis_100bk.csv
+Flagged Swims
+shape: (3, 6)
+┌───────┬─────────────────┬────────────────┬───────────┬────────────────┬────────────────┐
+│ Time  ┆ Date            ┆ time_from_best ┆ time_diff ┆ scaled_percent ┆ modified_z_sco │
+│ ---   ┆ ---             ┆ ---            ┆ ---       ┆ _improvement   ┆ re             │
+│ f64   ┆ datetime[μs]    ┆ f64            ┆ i64       ┆ ---            ┆ ---            │
+│       ┆                 ┆                ┆           ┆ f64            ┆ f64            │
+╞═══════╪═════════════════╪════════════════╪═══════════╪════════════════╪════════════════╡
+│ 55.38 ┆ 2017-04-07      ┆ -0.97          ┆ 1         ┆ 1.721384       ┆ 15.168498      │
+│       ┆ 00:00:00        ┆                ┆           ┆                ┆                │
+│ 51.74 ┆ 2018-03-10      ┆ -1.24          ┆ 1         ┆ 2.340506       ┆ 20.534223      │
+│       ┆ 00:00:00        ┆                ┆           ┆                ┆                │
+│ 51.37 ┆ 2018-03-30      ┆ -0.37          ┆ 1         ┆ 0.715114       ┆ 6.447482       │
+│       ┆ 00:00:00        ┆                ┆           ┆                ┆                │
+└───────┴─────────────────┴────────────────┴───────────┴────────────────┴────────────────┘
+```
