@@ -10,7 +10,7 @@ python main.py --file "filepath.csv"
 > [!note]
 > Input files have been copied and pasted directly from Swimcloud's event time progression table.
 
-The script will output the full data for all flagged swims to `flagged_swims.csv`.
+The script will output the full data for all swims to `all_swims.csv`.
 
 ## Procedure
 1. Convert any times over 1 minute to seconds and hundredths of seconds. Format dates into ISO Timecodes.

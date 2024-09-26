@@ -138,4 +138,4 @@ print(
     .collect()
 )
 
-df.collect().write_csv("flagged_swims.csv")
+df.collect().write_csv("all_swims.csv")
