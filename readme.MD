@@ -24,21 +24,12 @@ The script will output the full data for all flagged swims to `flagged_swims.csv
 
 ## Example
 Below is an example of the script running on my own 100 Yard Backstroke times. Even though times are not actually fraudulent, the script still flags a few times.
-```text
+```bash
  python main.py --file data/davis_100bk.csv
-Flagged Swims
-shape: (3, 6)
-┌───────┬─────────────────┬────────────────┬───────────┬────────────────┬────────────────┐
-│ Time  ┆ Date            ┆ time_from_best ┆ time_diff ┆ scaled_percent ┆ modified_z_sco │
-│ ---   ┆ ---             ┆ ---            ┆ ---       ┆ _improvement   ┆ re             │
-│ f64   ┆ datetime[μs]    ┆ f64            ┆ i64       ┆ ---            ┆ ---            │
-│       ┆                 ┆                ┆           ┆ f64            ┆ f64            │
-╞═══════╪═════════════════╪════════════════╪═══════════╪════════════════╪════════════════╡
-│ 55.38 ┆ 2017-04-07      ┆ -0.97          ┆ 1         ┆ 1.721384       ┆ 15.168498      │
-│       ┆ 00:00:00        ┆                ┆           ┆                ┆                │
-│ 51.74 ┆ 2018-03-10      ┆ -1.24          ┆ 1         ┆ 2.340506       ┆ 20.534223      │
-│       ┆ 00:00:00        ┆                ┆           ┆                ┆                │
-│ 51.37 ┆ 2018-03-30      ┆ -0.37          ┆ 1         ┆ 0.715114       ┆ 6.447482       │
-│       ┆ 00:00:00        ┆                ┆           ┆                ┆                │
-└───────┴─────────────────┴────────────────┴───────────┴────────────────┴────────────────┘
 ```
+
+| Time  | Date                | time_from_best | time_diff | scaled_percent_improvement | modified_z_score |
+| ----- | ------------------- | -------------- | --------- | -------------------------- | ---------------- |
+| 55.38 | 2017-04-07 00:00:00 | -0.97          | 1         | 1.721384                   | 15.168498        |
+| 51.74 | 2018-03-10 00:00:00 | -1.24          | 1         | 2.340506                   | 20.534223        |
+| 51.37 | 2018-03-30 00:00:00 | -0.37          | 1         | 0.715114                   | 6.447482         |
